@@ -22,13 +22,25 @@ class myList():
             print(cur_pos.data)
             cur_pos = cur_pos.next
         print(cur_pos.data)
+    def insert(self,pos,data):
+        k = 1
+        node = Node(data)
+        cur_pos = self.head
+        while k < pos:
+            cur_pos = cur_pos.next
+            k+=1
+        hook = cur_pos.next
+        cur_pos.next = node
+        node.next = hook
 l = myList()
 l.add(3)
 l.add(45)
-l.printlist()
+#l.printlist()
 l.add(3)
 l.add(5)
 l.add(1)
 l.add(4)
+l.printlist()
+l.insert(2,400)
 l.printlist()
     
