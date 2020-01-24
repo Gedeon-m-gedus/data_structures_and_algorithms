@@ -50,6 +50,9 @@ class myList():
             cur_pos = cur_pos.next
             l += 1
         return l
+    def maxi(self):
+        l = self.printlist()
+        return max(l)
 
 l = myList()
 l.add(3)
@@ -63,6 +66,7 @@ print(l.printlist())
 print(l.lenght())
 l.insert(2,400)
 print(l.printlist())
+print(l.maxi())
 print(l.lenght())
 l.delete(2)
 print(l.printlist())
@@ -70,4 +74,5 @@ print(l.lenght())
 l.delete(2)
 print(l.printlist())
 print(l.lenght())
+print(l.maxi())
     
