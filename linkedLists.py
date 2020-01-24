@@ -32,6 +32,16 @@ class myList():
         hook = cur_pos.next
         cur_pos.next = node
         node.next = hook
+    def delete(self,pos):
+        k = 1
+        cur_pos = self.head
+        while k < pos:
+            cur_pos = cur_pos.next
+            k+=1
+        hook = cur_pos.next
+        hook2 = hook.next
+        cur_pos.next = hook2
+
 l = myList()
 l.add(3)
 l.add(45)
@@ -42,5 +52,7 @@ l.add(1)
 l.add(4)
 l.printlist()
 l.insert(2,400)
+l.printlist()
+l.delete(2)
 l.printlist()
     
