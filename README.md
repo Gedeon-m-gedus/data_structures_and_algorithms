@@ -1,7 +1,7 @@
 
 # Data structures and algorithms
 
-In this repo we have implementation of different programming algorithms and data structures using python programmin language
+In this repo we have implementation of different programming algorithms and data structures using python programming language
 
 #### List based collection
 - Linked lists
@@ -9,4 +9,5 @@ In this repo we have implementation of different programming algorithms and data
 - Queues
 
 #### Serching and sorting algorithms
-
+- Binary search
+- Recursion
