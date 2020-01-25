@@ -53,6 +53,10 @@ class myList():
     def maxi(self):
         l = self.printlist()
         return max(l)
+    def mini(self):
+        l = self.printlist()
+        return min(l)
+
 
 l = myList()
 l.add(3)
@@ -67,6 +71,7 @@ print(l.lenght())
 l.insert(2,400)
 print(l.printlist())
 print(l.maxi())
+print(l.mini())
 print(l.lenght())
 l.delete(2)
 print(l.printlist())
@@ -75,4 +80,5 @@ l.delete(2)
 print(l.printlist())
 print(l.lenght())
 print(l.maxi())
+print(l.mini())
     
