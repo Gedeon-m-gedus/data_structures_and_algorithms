@@ -56,6 +56,12 @@ class myList():
     def mini(self):
         l = self.printlist()
         return min(l)
+    def Pop(self):
+        cur_pos = self.head
+        while cur_pos.next !=None:
+            prv_pos = cur_pos
+            cur_pos = cur_pos.next
+        prv_pos.next = None
 
 
 l = myList()
@@ -66,6 +72,7 @@ l.add(3)
 l.add(5)
 l.add(1)
 l.add(4)
+l.Pop()
 print(l.printlist())
 print(l.lenght())
 l.insert(2,400)
@@ -77,6 +84,7 @@ l.delete(2)
 print(l.printlist())
 print(l.lenght())
 l.delete(2)
+l.Pop()
 print(l.printlist())
 print(l.lenght())
 print(l.maxi())
