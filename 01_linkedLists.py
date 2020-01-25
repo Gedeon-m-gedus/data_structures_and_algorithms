@@ -1,8 +1,9 @@
+#creating a node, a node must have data and next address
 class Node():
     def __init__(self,data = None):
         self.data = data
         self.next = None
-
+# a list class this all instances necessary to make working with the list eassy 
 class myList():
     def __init__(self,head=None):
         self.head = head
