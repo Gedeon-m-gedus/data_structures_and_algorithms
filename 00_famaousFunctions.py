@@ -38,5 +38,8 @@ def rotate_arr(arr,num):#input array and number of rotations
     return arr
 print(rotate_arr([1,2,3,4,5,6],2))
 
+## Converting English clock into french clock
+def clock(eng_time):
+    
     
 
