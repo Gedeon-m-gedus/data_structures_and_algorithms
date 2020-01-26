@@ -26,5 +26,17 @@ def remove_number(arr,num):
         arr.pop()
     return arr
 print(remove_number([3,3,2,33],3))
+
+## Codes to rotate an array iven number of rotaions
+def rotate_arr(arr,num):#input array and number of rotations
+    while num>0:
+        l = []
+        num -= 1
+        l.append(arr[len(arr)-1])
+        l = l + arr[:len(arr)-1]
+        arr = l
+    return arr
+print(rotate_arr([1,2,3,4,5,6],2))
+
     
 
