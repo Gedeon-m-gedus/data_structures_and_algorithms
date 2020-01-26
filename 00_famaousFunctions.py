@@ -40,6 +40,18 @@ print(rotate_arr([1,2,3,4,5,6],2))
 
 ## Converting English clock into french clock
 def clock(eng_time):
+    h = int(eng_time[0:2])
+    if eng_time[8:10] == 'PM' and h != 12:
+        h = h + 12
+        h = str(h)
+    if eng_time[8:10] == 'PM' and h == 12:
+        h = '00'
+    h = h + eng_time[2:8]
+    return h
+print(clock('12:23:35PM'))
+
+
+
     
     
 
