@@ -44,9 +44,12 @@ def clock(eng_time):
     if eng_time[8:10] == 'PM' and h != 12:
         h = h + 12
         h = str(h)
-    if eng_time[8:10] == 'PM' and h == 12:
+        h = h + eng_time[2:8]
+    elif eng_time[8:10] == 'AM' and h == 12:
         h = '00'
-    h = h + eng_time[2:8]
+        h = h + eng_time[2:8]
+    elif eng_time[8:10] == 'AM':
+        h = eng_time[0:8]
     return h
 print(clock('12:23:35PM'))
 
