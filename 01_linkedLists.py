@@ -18,6 +18,7 @@ class myList():
             cur_pos = cur_pos.next
         cur_pos.next = node
     def printlist(self):
+        if self.head == None: return
         cur_pos = self.head
         l = []
         while cur_pos.next != None:
