@@ -53,6 +53,14 @@ def clock(eng_time):
     return h
 print(clock('12:23:35PM'))
 
+## Intersection of two arrays
+def intsectionArrays(arr1,arr2):
+    s1 = set(arr1)
+    s2 = set(arr2)
+    return list(s1.intersection(s2))
+print(intsectionArrays([1,2,3,4,5],[1,4,6,7,4,8]))
+
+
 
 
     
