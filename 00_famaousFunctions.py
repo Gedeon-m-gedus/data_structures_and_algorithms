@@ -12,6 +12,7 @@ def possible_div(n):
     return l
 print(possible_div(10))  
 
+##_________________________________________________________________________________
 ## inplace removing element from a list of posivite numbers
 def remove_number(arr,num):
     k = 0
@@ -27,6 +28,7 @@ def remove_number(arr,num):
     return arr
 print(remove_number([3,3,2,33],3))
 
+##_________________________________________________________________________________
 ## Codes to rotate an array iven number of rotaions
 def rotate_arr(arr,num):#input array and number of rotations
     while num>0:
@@ -38,6 +40,7 @@ def rotate_arr(arr,num):#input array and number of rotations
     return arr
 print(rotate_arr([1,2,3,4,5,6],2))
 
+##_________________________________________________________________________________
 ## Converting English clock into french clock
 def clock(eng_time):
     h = int(eng_time[0:2])
@@ -53,6 +56,7 @@ def clock(eng_time):
     return h
 print(clock('12:23:35PM'))
 
+##_________________________________________________________________________________
 ## Intersection of two arrays
 def intsectionArrays(arr1,arr2):
     s1 = set(arr1)
@@ -60,6 +64,30 @@ def intsectionArrays(arr1,arr2):
     return list(s1.intersection(s2))
 print(intsectionArrays([1,2,3,4,5],[1,4,6,7,4,8]))
 
+##_________________________________________________________________________________
+## return a list of all array elements being multiplied but excluding index itself
+def mult(arr): #naive approach
+    ans = []
+    p = 1
+    for i in  (arr):
+        p=p*i
+    for i in (arr):
+        ans.append(p/i)
+    return ans  
+arr=[1,2,3,4,5]
+print(mult(arr))
+def mult(arr):## without using division
+    ans = []
+    for i in range(len(arr)):
+        ans.append(fronnt(arr[:i])*fronnt(arr[i+1:]))
+    return ans  
+def fronnt(arr):
+    p = 1
+    for i in arr:
+        p=p*i
+    return p
+arr=[1,2,3,4,5]
+print(mult(arr))
 
 
 
