@@ -89,6 +89,27 @@ def fronnt(arr):
 arr=[1,2,3,4,5]
 print(mult(arr))
 
+##________________________________________________________________________
+def mult(arr):#forward and backwward implementation
+    cur_mul = 1
+    prev_mul = 1
+    l1 = []
+    for i in range(len(arr)):
+        prev_mul = cur_mul
+        cur_mul *= arr[i]
+        l1.append(prev_mul)
+    
+    cur_mul = 1
+    prev_mul = 1
+    l2 = []
+    for i in range (-1,-len(arr)-1,-1):
+        prev_mul = cur_mul
+        cur_mul *= arr[i] 
+        l2.append(l1[i]*prev_mul)
+    
+    return l2[::-1]
+arr=[1,2,3,4,5]
+print(mult(arr))
 
 
     
