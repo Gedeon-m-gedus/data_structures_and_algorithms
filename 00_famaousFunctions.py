@@ -111,6 +111,19 @@ def mult(arr):#forward and backwward implementation
 arr=[1,2,3,4,5]
 print(mult(arr))
 
+##_____________________________________
+#getting dictionary from string input, characters will be keys and their frequency will be values
+def str_dic(txt):
+    dic = {}
+    for i in txt:
+        if i in dic.keys():
+            dic[i]=dic[i]+1
+        else:dic[i]=1
+    return dic
+
+txt = 'abas'
+print(str_dic(txt))
+
 
     
     
