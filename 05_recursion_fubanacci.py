@@ -4,4 +4,4 @@ def fun_seq(n):
     if n == 1:
         return 1
     return fun_seq(n-1)+fun_seq(n-2)
-print(fun_seq(9))
+print(fun_seq(11))

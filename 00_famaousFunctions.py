@@ -124,7 +124,32 @@ def str_dic(txt):
 txt = 'abas'
 print(str_dic(txt))
 
+#Given an array of integers nums, write a method that returns the "pivot" index of this array.
 
+def pivotIndex(nums):
+    for i in range(len(nums)):
+        s1 = sum(nums[:i])
+        s2 = sum(nums[i+1:])
+        if s1 ==s2 : return i
+    return -1
+
+#In a given integer array nums, there is always exactly one largest element.
+
+#Find whether the largest element in the array is at least twice as much as every other number in the array.
+
+#If it is, return the index of the largest element, otherwise return -1.
+
+def dominantIndex( nums):
+        
+        mx = max(nums)
+        for i in range(len(nums)):
+            if nums[i]==mx: t = i
+            if nums[i]!=mx:
+                if mx>=2*nums[i]:
+                    k = False
+                else: return -1
+            
+        return t
     
     
 
