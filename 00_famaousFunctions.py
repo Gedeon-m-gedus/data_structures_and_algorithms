@@ -165,6 +165,32 @@ def plusOne( digits):
 
 ## given a list, write a function that return sub array with at most k odd number, and the sub lists have to be contigious
 
-    
-    
+def distinctSubKodds(nums,k):
+    sol = {}
+    for i in range(len(nums)):
+        sol.add(nums[i])
+        odd_count = 0
+        A_sol = []
+        for j in range(i,len(nums)):
+            if nums[j]%2 != 0:
+                odd_count += 1
+                if odd_count > k:
+                    break
+                A_sol.append(nums[j])
 
+##creating pascal triangle
+def generate( numRows):
+            l1 = [1]
+            l2 = [1,1]
+            ans = [l1,l2]
+            if numRows <= 0: return []
+            if numRows == 1: return [[1]]
+
+            while numRows>2:
+                md = []
+                numRows-=1
+                for i in range (len(l2)-1):
+                    md.append(l2[i]+l2[i+1])
+                l2 = l1+md+l1
+                ans.append(l2)
+            return ans
