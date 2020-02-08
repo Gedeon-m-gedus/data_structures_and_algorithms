@@ -194,3 +194,24 @@ def generate( numRows):
                 l2 = l1+md+l1
                 ans.append(l2)
             return ans
+
+## checking string within big string
+def strStr( haystack, needle):
+        """
+        :type haystack: str
+        :type needle: str
+        :rtype: int
+        """
+        if haystack == '' and needle == '': return 0
+        l = len(needle)
+        k = 0
+        while k<len(haystack):
+            if haystack[k:k+l]==needle: return k
+            k +=1
+        return -1
+def strStr( haystack, needle):
+    try:
+        return haystack.index(needle)
+    except:
+        return -1
+            
