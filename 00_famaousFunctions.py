@@ -214,4 +214,13 @@ def strStr( haystack, needle):
         return haystack.index(needle)
     except:
         return -1
-            
+
+#reversing a string
+def reverse(arr):
+    j = len(arr)-1
+    i = 0
+    while j-i>=0:
+        arr[i],arr[j]=arr[j],arr[i]
+        j-=1
+        i+=1
+    return arr
