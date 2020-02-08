@@ -150,6 +150,21 @@ def dominantIndex( nums):
                 else: return -1
             
         return t
+#Given a non-empty array of digits representing a non-negative integer, plus one to the integer.
+
+#The digits are stored such that the most significant digit is at the head of the list, and each element in the array contain a single digit.
+
+#You may assume the integer does not contain any leading zero, except the number 0 itself.
+
+def plusOne( digits):
+        dig = "".join([str(i) for i in digits])
+        dig2 = int(dig)
+        dig3 = dig2+1
+        dig4 = str(dig3)
+        return [int(char) for char in dig4]
+
+## given a list, write a function that return sub array with at most k odd number, and the sub lists have to be contigious
+
     
     
 
