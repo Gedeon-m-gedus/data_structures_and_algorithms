@@ -5,9 +5,9 @@ class Node():
         self.right = None
     def add(self,data):
         if self.data:
-            if self.data < data:
+            if data > self.data:
                 if self.left is not None:
-                    self.left.add(data):
+                    self.left.add(data)
                 else:
                     self.left = Node(data)
             else:
@@ -25,3 +25,10 @@ class Node():
         print(self.data)
         if self.right:
             self.right.printTree()
+
+root = Node(50)
+for i in range(27,70,3):
+    root.add(i)
+for i in range(3,100,9):
+    root.add(i)
+root.printTree()
