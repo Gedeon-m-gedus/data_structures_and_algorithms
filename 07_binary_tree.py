@@ -18,3 +18,10 @@ class Node():
 
         else:
             self.data = Node(data)
+    
+    def printTree(self):
+        if self.left:
+            self.left.printTree()
+        print(self.data)
+        if self.right:
+            self.right.printTree()
