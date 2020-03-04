@@ -25,5 +25,29 @@ class Node():
         print(self.data)
         if self.right:
             self.right.printTree()
+    
+    def search(self,data):
+        if self.data<data:
+            if self.left is None:
+                return print('Not found')
+            return self.left.search(data)
+            
+        elif self.data>data:
+            if self.right is None:
+                return print('Not found')
+            return self.right.search(data)
+            
+        else:
+            return print('Number found')
 
 root = Node(50)
+root.add(23)
+root.add(93)
+root.add(203)
+root.add(2)
+root.add(9)
+root.add(20)
+root.printTree()
+root.search(2)
+root.search(0)
+#root.printTree()
