@@ -20,7 +20,7 @@ The basics of data structures form the foundation of computer science and progra
 ##### Arrays:
 - An ordered collection of elements where each element can be accessed using an index.
 - Operations include insertion, deletion, and access.
-- Arrays have constant time access to elements (O(1)), but insertion and deletion may be O(n) in the worst case.
+- Arrays have constant time access to elements `(O(1))`, but insertion and deletion may be `O(n)` in the worst case.
 
 ```python
 
