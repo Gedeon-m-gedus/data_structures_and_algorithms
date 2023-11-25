@@ -175,6 +175,42 @@ root = Node(1)
 root.left = Node(2)
 root.right = Node(3)
 ```
+More details for Binary Tree implementation
+```python
+class Node:
+    def __init__(self, key):
+        self.left = None
+        self.right = None
+        self.val = key
+
+# Insert function for Binary Tree
+def insert(root, key):
+    if root is None:
+        return Node(key)
+    else:
+        if key < root.val:
+            root.left = insert(root.left, key)
+        else:
+            root.right = insert(root.right, key)
+    return root
+
+# Example usage:
+binary_tree_root = None
+values_to_insert = [4, 6, 2, 5, 8, 9]
+
+# Inserting nodes into the binary tree
+for value in values_to_insert:
+    binary_tree_root = insert(binary_tree_root, value)
+
+# Traversing and printing the binary tree in inorder
+def inorder_traversal(node):
+    if node:
+        inorder_traversal(node.left)
+        print(node.val, end=' ')
+        inorder_traversal(node.right)
+
+inorder_traversal(binary_tree_root)
+```
 
 ##### Binary Search Tree (BST):
 - A binary tree with the property that the left subtree of a node contains only nodes with keys less than the node's key, and the right subtree contains only nodes with keys greater than the node's key.
