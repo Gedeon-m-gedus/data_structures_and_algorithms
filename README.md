@@ -556,3 +556,127 @@ keys = [5, 3, 7, 2, 4, 6, 8]
 for key in keys:
     splay_root = splay(splay_root, key)
 ```
+
+## Graphs (un/directed, un/weighted)
+
+Graphs are fundamental data structures that model relationships between entities. They consist of nodes (vertices) and edges, where edges represent connections or relationships between nodes. Graphs can be categorized based on the presence or absence of directions on edges and the assignment of weights to edges.
+
+- **Vertices (Nodes)**: Represent entities or points in the graph. In applications, vertices can represent cities, people, web pages, etc.
+- **Edges**: Connect vertices and represent relationships between them. In applications, edges can represent connections, friendships, links, etc.
+- **Degree of a Vertex**: The degree of a vertex is the number of edges connected to it. In directed graphs, there are two degrees: in-degree (incoming edges) and out-degree (outgoing edges).
+- **Path**: A path is a sequence of vertices where each adjacent pair is connected by an edge.
+- **Cycle**: A cycle is a path that starts and ends at the same vertex.
+- **Connected Graph**: A graph is connected if there is a path between every pair of vertices.
+- **Disconnected Graph**: A graph is disconnected if there are vertices with no path to other vertices.
+
+##### Directed Graph (Digraph):
+- In a directed graph, edges have a direction. Each edge connects an ordered pair of nodes, where the direction indicates a one-way relationship.
+- A directed edge goes from one node (the source or tail) to another node (the destination or head).
+- *Example*: Social network connections, web page hyperlinks.
+```python
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.outgoing_edges = []
+
+# Create nodes
+node1 = Node(1)
+node2 = Node(2)
+node3 = Node(3)
+node4 = Node(4)
+
+# Create directed edges
+node1.outgoing_edges.append(node2)
+node2.outgoing_edges.append(node3)
+node3.outgoing_edges.append(node1)
+node3.outgoing_edges.append(node4)
+
+# Display the directed graph
+for node in [node1, node2, node3, node4]:
+    neighbors = ', '.join(str(neighbor.value) for neighbor in node.outgoing_edges)
+    print(f"Node {node.value} -> {neighbors}")
+```
+
+##### Undirected Graph:
+- In an undirected graph, edges have no direction. They simply connect two nodes, forming an unordered pair.
+- Relationships are symmetric; if there is an edge from node A to B, there is also an edge from B to A.
+- *Example*: Friendship connections in a social network.
+```python
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.neighbors = []
+
+# Create nodes
+node1 = Node(1)
+node2 = Node(2)
+node3 = Node(3)
+node4 = Node(4)
+
+# Create undirected edges
+node1.neighbors.extend([node2, node3])
+node2.neighbors.extend([node1, node3])
+node3.neighbors.extend([node1, node2, node4])
+node4.neighbors.append(node3)
+
+# Display the undirected graph
+for node in [node1, node2, node3, node4]:
+    neighbors = ', '.join(str(neighbor.value) for neighbor in node.neighbors)
+    print(f"Node {node.value} - {neighbors}")
+```
+
+##### Weighted Graph:
+- In a weighted graph, each edge is assigned a numerical value called a weight.
+- Weights can represent distances, costs, time, etc. They add an additional layer of information to the graph.
+- *Example*: Road networks with distances between cities.
+```python
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.neighbors = {}  # Dictionary to store weights
+
+# Create nodes
+nodeA = Node('A')
+nodeB = Node('B')
+nodeC = Node('C')
+nodeD = Node('D')
+
+# Create weighted edges
+nodeA.neighbors[nodeB] = 3
+nodeB.neighbors[nodeC] = 2
+nodeC.neighbors[nodeA] = 1
+nodeC.neighbors[nodeD] = 4
+
+# Display the weighted graph
+for node in [nodeA, nodeB, nodeC, nodeD]:
+    neighbors = ', '.join(f"{neighbor.value}({weight})" for neighbor, weight in node.neighbors.items())
+    print(f"Node {node.value} -> {neighbors}")
+```
+
+##### Unweighted Graph:
+- In an unweighted graph, all edges are considered equal, and no numerical values are associated with them.
+- Relationships are binary, indicating only the presence or absence of a connection.
+- *Example*: Social network with connections indicating friendships (without considering strength or closeness).
+```python
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.neighbors = []
+
+# Create nodes
+nodeA = Node('A')
+nodeB = Node('B')
+nodeC = Node('C')
+nodeD = Node('D')
+
+# Create unweighted edges
+nodeA.neighbors.extend([nodeB, nodeC])
+nodeB.neighbors.extend([nodeA, nodeC])
+nodeC.neighbors.extend([nodeA, nodeB, nodeD])
+nodeD.neighbors.append(nodeC)
+
+# Display the unweighted graph
+for node in [nodeA, nodeB, nodeC, nodeD]:
+    neighbors = ', '.join(str(neighbor.value) for neighbor in node.neighbors)
+    print(f"Node {node.value} - {neighbors}")
+```
