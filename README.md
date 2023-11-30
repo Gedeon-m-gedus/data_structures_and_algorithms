@@ -563,7 +563,7 @@ Graphs are fundamental data structures that model relationships between entities
 
 - **Vertices (Nodes)**: Represent entities or points in the graph. In applications, vertices can represent cities, people, web pages, etc.
 - **Edges**: Connect vertices and represent relationships between them. In applications, edges can represent connections, friendships, links, etc.
-- **Degree of a Vertex**: The degree of a vertex is the number of edges connected to it. In directed graphs, there are two degrees: in-degree (incoming edges) and out-degree (outgoing edges).
+- **Degree of a Vertex**: The degree of a vertex is the number of edges connected to it. In directed graphs, there are two degrees; in-degree (incoming edges) and out-degree (outgoing edges).
 - **Path**: A path is a sequence of vertices where each adjacent pair is connected by an edge.
 - **Cycle**: A cycle is a path that starts and ends at the same vertex.
 - **Connected Graph**: A graph is connected if there is a path between every pair of vertices.
